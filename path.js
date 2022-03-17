@@ -8,6 +8,5 @@ for(let i=0;i<a.length;console.log('extension : '+a[i++].match(/(?=\.).+/)[0]));
 
 for(let i=0;i<a.length;console.log('without extension : '+a[i++].match(/.+(?=\.)/)[0]));
 
-
 //const reg=new RegExp('\..*');
 //console.log(b.match(/(?<=\.).+/));
