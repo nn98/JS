@@ -8,7 +8,7 @@
   
 <details><summary>Node</summary>
 
-  - Node.js http 모듈로 서버만들기 프로그램 분석 보고서
+  - Node.js - Lec1. http 모듈로 서버만들기 프로그램 분석 보고서
   - []()
   
   </details>
