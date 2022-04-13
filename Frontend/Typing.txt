@@ -1,0 +1,4 @@
+v-bind : js 객체
+.green {bgcolor-green};
+{green:value} - 동적 서식
+value = true 일 때 green 서식 적용.
