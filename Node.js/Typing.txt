@@ -20,3 +20,7 @@ Node.js
     상 > 하 순차 실행
     미들웨어는 req,res,next 매개변수
     next()로 다음 실행
+
+    morgan/cokkie-parser/express-session
+        > 자동으로 다음 미들웨어로
+    +dotenv 쿠키에서 관리하는 비밀 파일(key, value) 데이터 관리
