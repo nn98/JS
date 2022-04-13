@@ -1,4 +1,22 @@
 Node.js
-    express 상의 req/res 는 http의 그것보다 확잔된 내용
+    express 상의 req/res 는 http의 그것보다 확장된 내용
     html의 화면 구성 발전은 했지만 부족
     클라이언트 파트에서 +a == 템플릿 엔진
+
+    Express/Koa/Hapi
+
+    기능에 맞춰 폴더 구분
+    Default:
+        app.js  핵심 서버 스크립트
+        bin/www 서버 실행 스크립트
+        public  외부 접근 가능 파일
+        views   템플릿 파일
+        routes  라우터/로직
+                추후에 modules 만들어서 추가?
+    
+    Express 미들웨어로 구성
+    req/res 중간에 위치 == 미들웨어
+    app.use(middleware)로 "장착"?
+    상 > 하 순차 실행
+    미들웨어는 req,res,next 매개변수
+    next()로 다음 실행
