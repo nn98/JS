@@ -1,0 +1,4 @@
+Node.js
+    express 상의 req/res 는 http의 그것보다 확잔된 내용
+    html의 화면 구성 발전은 했지만 부족
+    클라이언트 파트에서 +a == 템플릿 엔진

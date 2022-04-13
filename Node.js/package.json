@@ -1,0 +1,11 @@
+{
+  "name": "node.js_prectice",
+  "version": "1.0.0",
+  "description": "node.js lecture",
+  "main": "index.js",
+  "scripts": {
+    "test": "node -v"
+  },
+  "author": "nn98",
+  "license": "MIT"
+}
