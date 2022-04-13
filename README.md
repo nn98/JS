@@ -1,6 +1,6 @@
 # JS
 * * *
-<details><summary>React</summary>
+<details><summary>Frontend</summary>
 
   - []()
   
