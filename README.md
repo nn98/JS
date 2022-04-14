@@ -2,6 +2,7 @@
 * * *
 <details><summary>Frontend</summary>
 
+  - In Lecture-1
   - []()
   
   </details>
