@@ -5,6 +5,7 @@
     "express": "^4.17.3",
     "express-session": "^1.17.2",
     "morgan": "^1.10.0",
+    "mysql": "^2.18.1",
     "session": "^0.1.0"
   }
 }
