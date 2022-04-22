@@ -6,7 +6,7 @@ var bodyParser = require('body-parser')
 var mysql = require('mysql')
 
 var connection = mysql.createConnection({
-  host : "13.125.183.103",
+  host : "3.35.95.30",
   port : 3306,
   user : "Project",
   password : "testing00",
@@ -15,7 +15,7 @@ var connection = mysql.createConnection({
 
 console.log("ing");
 app.get("/test", function (req, res) {
-    connection.query('select * from SOLVED_RANK;', function (err, rows) {
+    connection.query('select * from Solvedrank;', function (err, rows) {
         if (err) {
           console.log("err :"+err)
         }
@@ -26,7 +26,7 @@ app.get("/test", function (req, res) {
 
 app.post('/post', (req, res) => {
     console.log('who get in here post /users');
-    connection.query('select * from SOLVED_RANK;', function (err, rows) {
+    connection.query('select * from Solvedrank;', function (err, rows) {
         if (err) {
           console.log("err :"+err)
         }
