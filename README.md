@@ -3,7 +3,7 @@
 <details><summary>Frontend</summary>
 
   - In Lecture-1
-  - [eslint](https://leleluv1122.github.io/error/vue-error1/)
+  - Err1_eslint : 'eslint' 용어가 cmdlet, 함수, 스크립트 파일 또는...[Solved](https://leleluv1122.github.io/error/vue-error1/)
   
   </details>
   
