@@ -9,3 +9,23 @@ native > react > vue
 화면을 다시 그릴 때 마다 메소드가 다시 호출된다.
 계산 속성의 값을 출력하는 형태로 구현하면,
 getter 메소드의 리턴값이 캐시에 저장된 후 화면에 출력된다.
+
+#### 22-04-27 
+- Vue - 데이터 변경시 즉시 리로드
+- js문법상 this 대부분 사용
+- css 분리 가시성 성능 양득
+  - 분리된 서식파일은 서버 캐시에 등록-성능 향상.
+  - *플젝시 자주 사용되는 서식만 분리해놓으면 성능 향상.*
+- v-model 양방향 특성. 
+` ` `
+//js 문법 활용. 코드 간소화/자원 효율화
+deleteTodo: function () {
+    let list = [];
+    for (let i = 0; i < this.todoList.length; ++i)
+        if (!this.checked[i])
+            list.push(this.todoList[i]);
+    this.todoList = list;
+    this.checked = [];
+}
+` ` `
+- 메소드/computed 활용 장단 - computed는 다시 계산할 필요 없으면 기존값 재활용.
