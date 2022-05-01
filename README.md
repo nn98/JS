@@ -28,6 +28,7 @@
   - [깃허브 non-fast-forward 에러 해결하기](https://velog.io/@rain98/%EA%B9%83%ED%97%88%EB%B8%8C-non-fast-forward-%EC%97%90%EB%9F%AC-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0)
   - [Git push rejected "non-fast-forward"](https://stackoverflow.com/questions/20467179/git-push-rejected-non-fast-forward)
   - [Git add 취소하기](https://gmlwjd9405.github.io/2018/05/25/git-add-cancle.html)
+  - [Git add 취소하기2](https://www.lainyzine.com/ko/article/how-to-cancle-git-add/)
   - []()
   
   </details>
