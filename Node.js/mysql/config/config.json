@@ -1,9 +1,10 @@
 {
   "development": {
-    "username": "root",
-    "password": "gusqhr12@",
+    "username": "Project",
+    "password": "testing00",
     "database": "nodejs",
     "host": "127.0.0.1",
+    "port": 21006,
     "dialect": "mysql"
   },
   "test": {

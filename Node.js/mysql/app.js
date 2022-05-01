@@ -1,67 +1,79 @@
-// express 생성
+/* 모듈/템플릿/객체 정의부 */
+// express 모듈 정의 및 생성
 const express = require('express')
-
-// 파일의 경로를 지정 하기 위한 path 모듈 사용
+// morgan 모듈 정의 및 생성 - 로깅용 미들웨어
+const morgan = require('morgan')
+// path 모듈 정의 및 생성
 const path = require('path')
 
-// 로깅(logging)에 도움을 주는 morgan 미들웨어 모듈 사용
-// 로깅 = 무슨 일이 어디에서 일어났는지를 기록하는 것
-const morgan = require('morgan')
-
+// app 객체 정의 및 생성
+const app = express()
+// nunjucks 템플릿 엔진 객체 정의 및 생성
 const nunjucks = require('nunjucks')
-
-// MySQL 작업을 쉽게 할 수 있도록 도와주는 라이브러리, ORM(Object-relational Mapping)으로 분류
-// ORM = 자바스크립트 객체와 데이터베이스의 릴레이션을 매핑해주는 도구
-// 시퀄라이즈를 쓰는 이유는 자바스크립트 구문을 알아서 SQL로 바꿔주기 때문
-const { sequelize } = require('./models')
-
-// index.js, user.js, comment.js를 app.js에 연결하기 위한 변수 선언
+// index/users/comments routing
 const indexRouter = require('./routes')
 const usersRouter = require('./routes/users')
 const commentsRouter = require('./routes/comments')
 
-// express를 app으로 사용
-const app = express()
+// 시퀄라이즈: 자바스크립트 구문 SQL로 변환
+const { sequelize } = require('./models')
+// MySQL 조작 보조 라이브러리, ORM(Object-relational Mapping)==DTO
 
-// 서버가 실행될 포트를 설정
+// set application port
 app.set('port', process.env.PORT || 3001)
-
+// set view/template engine-html
 app.set('view engine', 'html')
+
+// configure nunjucks, set nunjucks template dir 
 nunjucks.configure('views', {
+  // set express application
   express: app,
+  // true - html 파일 변경시 템플릿 엔진 다시 렌더링
   watch: true,
 })
+
+// 시퀄 초기화. 강제성 설정 가능
 sequelize
+// Promise 반환하는 비동기 함수 - DB-Model 동기화, SQL 쿼리(./nodejs.sql) 자동 실행
   .sync({ force: false })
+  // success,
   .then(() => {
+    // log successfully connected
     console.log('데이터베이스 연결 성공')
   })
+  // error,
   .catch((err) => {
+    // notify error
     console.error(err)
   })
 
 // morgan 미들웨어 사용
-// dev 모드 기준으로 GET / 500 7.409 ms – 50은 각각 [HTTP 메서드] [주소] [HTTP 상태 코드] [응답 속도] - [응답 바이트]를 의미
 // 인수로 dev 외에 combined, common, short, tiny 등 사용 가능
 app.use(morgan('dev'))
+// by 'dev'
+//      GET          /           500             7.401 ms    –        50
+// [HTTP method] [adress] [HTTP status code] [response time] - [response byte]
 
+// 정적 디렉토리로 js 파일 사용 미들웨어 함수. path 사용해 public dir 내부의 파일 제공
 app.use(express.static(path.join(__dirname, 'public')))
+// json payloads 요청 구문 분석? body-parser 기반이라는데 body-parser 안쓰는데
 app.use(express.json())
+// urlencoded payloads~위와 동일
 app.use(express.urlencoded({ extended: false }))
 
-// index.js, user.js, comment.js를 app.use를 통해 app.js에 연결
+// 사전에 생성된 라우터 연동
 app.use('/', indexRouter)
 app.use('/users', usersRouter)
 app.use('/comments', commentsRouter)
 
-// 라우터가 없다면 404 상태 코드를 응답하는 미들웨어 하나 추가
+// 요청된 URL에 해당하는 라우터가 없다면 404 상태 코드를 응답하는 미들웨어
 app.use((req, res, next) => {
   const error = new Error(`${req.method} ${req.url} 라우터가 없습니다.`)
   error.status = 404
   next(error)
 })
 
-//
+// 404 코드 + 추가 정보 리턴|리스폰스|응답
 app.use((err, req, res, next) => {
   res.locals.message = err.message
   res.locals.error = process.env.NODE_ENV !== 'production' ? err : {}
@@ -69,7 +81,8 @@ app.use((err, req, res, next) => {
   res.render('error')
 })
 
-// 포트를 연결하고 서버를 실행
+// 설정된 포트로 서버 실행
 app.listen(app.get('port'), () => {
+  // 포트 및 서버 실행 안내
   console.log(app.get('port'), '번 포트에서 대기 중')
 })
