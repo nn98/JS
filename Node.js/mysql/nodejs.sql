@@ -34,7 +34,6 @@ AUTO_INCREMENT = 4
 DEFAULT CHARACTER SET = utf8mb3
 COMMENT = '사용자 정보';
 
-
 -- -----------------------------------------------------
 -- Table `nodejs`.`comments`
 -- -----------------------------------------------------
@@ -55,7 +54,6 @@ AUTO_INCREMENT = 5
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci
 COMMENT = '댓글';
-
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
