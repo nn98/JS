@@ -1,0 +1,84 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <script src="https://unpkg.com/vue@next"></script>
+    <style>
+        div#app {
+            padding: 30px;
+            margin: 30px;
+            width: 400px;
+            border: 1px solid #ccc;
+            box-shadow: 3px 3px 3px #aaa;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 300px;
+        }
+
+        td {
+            padding: 5px;
+            border: 1px solid #aaa;
+        }
+
+        td:nth-child(4) {
+            width: 50px;
+        }
+
+        tr:nth-child(1) {
+            background-color: #ddd;
+        }
+
+        input {
+            padding: 5px;
+            margin-top: 10px;
+        }
+
+        button {
+            padding: 0.5em 1em;
+            margin-top: 10px;
+            margin-right: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <h1>test2</h1>
+        <hr />
+        <table>
+            <tr>
+                <td>no</td>
+                <td>title</td>
+            </tr>
+            <tr v-for="(no,title) in product" v-bind:key="key">
+                <td>{{ product.no }}</td>
+                <td>{{ product.title }}</td>
+            </tr>
+        </table>
+        <input type="text" v-model="newKey"/> <br />
+        <input type="text" v-model="newValue"/> <br />
+        <button type="button" v-on:click="add">추가</button>
+    </div>
+    <script type="text/javascript">
+        let app = {
+            data() {
+                return {
+                    product: { no: 1, title: "우유"},
+                    newKey: '',
+                    newValue: ''
+                };
+            },
+            methods: {
+                add() {
+                    this.product[this.newKey] = this.newValue;
+                    console.log(this.newKey, this.product[this.newKey]);
+                }
+            }
+        };
+        Vue.createApp(app).mount("#app");
+    </script>
+</body>
+
+</html>

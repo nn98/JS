@@ -1,0 +1,70 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <script src="https://unpkg.com/vue@next"></script>
+    <style>
+        div#app {
+            padding: 30px;
+            margin: 30px;
+            width: 400px;
+            border: 1px solid #ccc;
+            box-shadow: 3px 3px 3px #aaa;
+        }
+
+        div#app div {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+        }
+
+        input[type=text] {
+            padding: 4px;
+        }
+
+        div.total {
+            font-size: 16pt;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <h1>test3</h1>
+        <div>
+            <label>from</label>
+            <input type="text" v-model="from" />
+        </div>
+        <div>
+            <label>to</label>
+            <input type="text" v-model="to" />
+        </div>
+        <hr />
+        <div class="sum">
+            {{ sum }}
+        </div>
+    </div>
+    <script type="text/javascript">
+        let app = {
+            data() {
+                return {
+                    from: 1,
+                    to: 3
+                };
+            },
+            computed: {
+                sum() {
+                    let s = 0,f=this.from,t=this.to;
+                    for (let i = f; i <= t;)
+                        s += i++
+                    return s;
+                }
+            }
+        };
+        Vue.createApp(app).mount("#app");
+    </script>
+</body>
+
+</html>

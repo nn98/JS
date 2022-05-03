@@ -1,0 +1,70 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <script src="https://unpkg.com/vue@next"></script>
+    <style>
+        div#app {
+            padding: 30px;
+            margin: 30px;
+            width: 400px;
+            border: 1px solid #ccc;
+            box-shadow: 3px 3px 3px #aaa;
+        }
+
+        div#app div {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+        }
+
+        input[type=text] {
+            padding: 4px;
+        }
+        button{
+            padding: 5px 30px 5px 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <h1>test1</h1>
+        <div>
+            <input type="text" v-model="value1" />
+        </div>
+        <div>
+            <input type="text" v-model="value2" />
+        </div>
+        <div>
+            <button type="button" v-on:click="multyply">곱하기</button>
+            <button type="button" v-on:click="divide" style="margin-left: 8px;">나누기</button>
+        </div>
+        <hr />
+        <h3>{{ result }}</h3>
+    </div>
+    <script type="text/javascript">
+        let app = {
+            data() {
+                return {
+                    value1: 0,
+                    value2: 0,
+                    result: 0
+                };
+            },
+            methods: {
+                multyply(){
+                    this.result=this.value1 * this.value2;
+                },
+                divide(){
+                    this.result=this.value1 / this.value2;
+                }
+            }
+        };
+        Vue.createApp(app).mount("#app");
+    </script>
+</body>
+
+</html>
