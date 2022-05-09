@@ -52,7 +52,7 @@
                 <td>no</td>
                 <td>title</td>
             </tr>
-            <tr v-for="(no,title) in product" v-bind:key="key">
+            <tr v-for="product in products" v-bind:key="key">
                 <td>{{ product.no }}</td>
                 <td>{{ product.title }}</td>
             </tr>
@@ -65,14 +65,15 @@
         let app = {
             data() {
                 return {
-                    product: { no: 1, title: "우유"},
+                    products:[ { no: 1, title: "우유"}],
                     newKey: '',
                     newValue: ''
                 };
             },
             methods: {
                 add() {
-                    this.product[this.newKey] = this.newValue;
+                    let product={no: this.newKey,title: this.newValue};
+                    this.products.push(product);
                     console.log(this.newKey, this.product[this.newKey]);
                 }
             }

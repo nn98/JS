@@ -56,9 +56,9 @@
             },
             computed: {
                 sum() {
-                    let s = 0,f=this.from,t=this.to;
-                    for (let i = f; i <= t;)
-                        s += i++
+                    let s = 0,f=Number(this.from),t=Number(this.to);
+                    for (let i = f; i <= t;i++)
+                        s=s+i;
                     return s;
                 }
             }
