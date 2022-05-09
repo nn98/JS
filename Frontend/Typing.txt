@@ -40,3 +40,13 @@ catch 유사. catch하려는 결과 캐치시 정의된 함수 실행
 CPU >> IO 속도차 극복을 위한 콜백 함수 기법 활용.
 코드의 순서와 실제 실행 순서가 상이
 
+~ 지금까지 코드들은 정규 js문법에 속해 컴파일 필요 없이 실행 가능.
+Vue 문법에 맞춰 제대로 작성된 js는 확장된 js문법.
+- transpile 필요. 확장 코드 확장자-vue 트랜스파일 후-js
+    IE11도 실행가능. ES5문법 사용
+- 압축
+    코드 크기에 따라 실행 속도 저하 가능.
+    minify 필드명 축소, 연속 공백/개행 단축, 주석 제거 - 파일 크기 감소 확장자-min.js
+
+transpile minify babel webpack eslint
+maven -> gradle
