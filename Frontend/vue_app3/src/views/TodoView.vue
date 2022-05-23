@@ -1,5 +1,10 @@
 <template>
-  <div class="about">
-    <h1>This is an todo page</h1>
+  <div>
+    <h1>할일</h1>
   </div>
 </template>
+<script>
+export default {
+  name: "TodoView",
+};
+</script>
