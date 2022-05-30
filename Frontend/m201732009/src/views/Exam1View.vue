@@ -1,8 +1,13 @@
 <template>
   <div>
     <h1>Exam1</h1>
+<<<<<<< HEAD
     <input type="text" v-model="value"/>
     <Exam1Child v-bind:msg="value" />
+=======
+    <input type="text" v-model="title" v-on:send="totitle" />
+    <Exam1Child title="hello" v-on:send="totitle" />
+>>>>>>> 7df85b300926472bac66d41a5a3a675cd4d0115e
   </div>
 </template>
 <script>
@@ -21,7 +26,11 @@ export default {
   },
   data: function() {
     return {
+<<<<<<< HEAD
       value: 'hello'
+=======
+      title: "hello"
+>>>>>>> 7df85b300926472bac66d41a5a3a675cd4d0115e
     };
   },
 };

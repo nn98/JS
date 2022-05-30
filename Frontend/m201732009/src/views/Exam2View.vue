@@ -1,9 +1,15 @@
 <template>
   <div>
     <h1>Exam2</h1>
+<<<<<<< HEAD
     <input type="number" v-model.number="num1"/><br><br>
     <input type="number" v-model.number="num2"/>
     <Exam2Child v-bind:num1="num1" v-bind:enabled="true" v-bind:num2="num2" v-on:send="totitle" />
+=======
+    <input type="number" v-model="num1" v-on:send="totitle" /><br><br>
+    <input type="number" v-model="num2" v-on:send="totitle" @click="$emit('send', num2)"/>
+    <Exam2Child v-bind:num1=3 v-bind:enabled="true" v-bind:num2=4 v-on:send="totitle" />
+>>>>>>> 7df85b300926472bac66d41a5a3a675cd4d0115e
   </div>
 </template>
 <script>

@@ -53,6 +53,7 @@ maven -> gradle 추세의 전환
 
 CLI <> GUI
 
+<<<<<<< HEAD
 2022-05-25
 mounted life-cycle method == onCreate()
 webB c++객체 == DOM         slow
@@ -64,3 +65,5 @@ VD - 변환된 페이지간 차이 분석 및 필요한 부분만 추가 구현.
 VD-렌더링 / RD - 업데이트
 
 beforeDestroy > beForeUnmount
+=======
+>>>>>>> 7df85b300926472bac66d41a5a3a675cd4d0115e
