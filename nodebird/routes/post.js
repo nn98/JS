@@ -14,7 +14,7 @@ try {
   console.error('uploads 폴더가 없어 uploads 폴더를 생성합니다.');
   fs.mkdirSync('uploads');
 }
-
+ 
 const upload = multer({
   storage: multer.diskStorage({
     destination(req, file, cb) {
@@ -28,11 +28,38 @@ const upload = multer({
   limits: { fileSize: 5 * 1024 * 1024 },
 });
 
+router.post("/update", isLoggedIn, async (req, res, next) => {
+  console.log('up clicked');
+  console.log('up clicked');
+  console.log('up clicked');
+  console.log('up clicked');
+  console.log('up clicked');
+  try {
+    const post = await Post.findOne({ where: { id: req.body.id } });
+    if (post) {
+      // const result = await post.addLikes(req.user.id);
+      
+      post.update({
+        count: post.count-1
+      })
+      cache.setDirty(req.user.id);
+      res.send("success");
+    }
+  } catch (error) {
+    console.error(error);
+    next(error);
+  }
+});
+
 router.post("/like", isLoggedIn, async (req, res, next) => {
   try {
     const post = await Post.findOne({ where: { id: req.body.id } });
     if (post) {
-      const result = await post.addLikes(req.user.id);
+      // const result = await post.addLikes(req.user.id);
+      
+      post.update({
+        count: post.count+1
+      })
       cache.setDirty(req.user.id);
       res.send("success");
     }
@@ -46,7 +73,47 @@ router.post("/dislike", isLoggedIn, async (req, res, next) => {
   try {
     const post = await Post.findOne({ where: { id: req.body.id } });
     if (post) {
-      const result = await post.removeLikes(req.user.id);
+      // const result = await post.addLikes(req.user.id);
+      
+      post.update({
+        count: post.count-1
+      })
+      cache.setDirty(req.user.id);
+      res.send("success");
+    }
+  } catch (error) {
+    console.error(error);
+    next(error);
+  }
+});
+
+router.post("/plus", isLoggedIn, async (req, res, next) => {
+  try {
+    const post = await Post.findOne({ where: { id: req.body.id } });
+    if (post) {
+      // const result = await post.addLikes(req.user.id);
+      
+      post.update({
+        count: post.count+1
+      })
+      cache.setDirty(req.user.id);
+      res.send("success");
+    }
+  } catch (error) {
+    console.error(error);
+    next(error);
+  }
+});
+
+router.post("/minus", isLoggedIn, async (req, res, next) => {
+  try {
+    const post = await Post.findOne({ where: { id: req.body.id } });
+    if (post) {
+      // const result = await post.addLikes(req.user.id);
+      
+      post.update({
+        count: post.count-1
+      })
       cache.setDirty(req.user.id);
       res.send("success");
     }

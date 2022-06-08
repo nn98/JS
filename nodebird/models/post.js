@@ -1,3 +1,4 @@
+const { INTEGER } = require('sequelize');
 const Sequelize = require('sequelize');
 
 module.exports = class Post extends Sequelize.Model {
@@ -11,6 +12,10 @@ module.exports = class Post extends Sequelize.Model {
         type: Sequelize.STRING(200),
         allowNull: true,
       },
+      count:{
+        type: INTEGER.UNSIGNED,
+        defaultValue: 1,
+      }
     }, {
       sequelize,
       timestamps: true,
@@ -24,7 +29,7 @@ module.exports = class Post extends Sequelize.Model {
   }
 
   static associate(db) {
-    db.Post.belongsTo(db.User);
+    db.Post.belongsTo(db.User,{through: 'Posting'});
     db.Post.belongsToMany(db.Hashtag, { through: 'PostHashtag' });
     db.Post.belongsToMany(db.User, { through: "PostLikes", as: "Likes" });
   }

@@ -3,18 +3,18 @@
 {% block content %}
   <div class="timeline">
     <div class="user-name">
-      <h2>프로필 정보</h2>    
+      <h2>Profile</h2>    
       <div class="half">    
-        <h4>이메일</h4> 
+        <h4>Email/ID</h4> 
         {{user.email}}
       </div>
       <div class="half">    
-        <h4>닉네임</h4> 
+        <h4>Nickname</h4> 
         {{user.nick}}
-        <button class="nick-change">변경</button>
+        <button class="nick-change">chanege</button>
       </div>
   </div>
-    <div class="followings half">
+    <!-- <div class="followings half">
       <h2>팔로잉 목록</h2>
       {% if user.Followings %}
         {% for following in user.Followings %}
@@ -25,16 +25,56 @@
         </div>
         {% endfor %}
       {% endif %}
-    </div>
+    </div> -->
     <div class="followers half">
-      <h2>팔로워 목록</h2>
+      <h2>Materials</h2>
       {% if user.Followers %}
         {% for follower in user.Followers %}
-          <div>{{follower.nick}}</div>
+          <!-- <div>팔로잉-{{follower.nick}}</div> -->
         {% endfor %}
       {% endif %}
+      <div>
+        <strong style="font-size: 15pt; color: crimson;">의자</strong>
+        <span style="font-size: 15pt;">3</span>
+      </div>
+      <div>
+        <strong style="font-size: 15pt; color: crimson;">키보드</strong>
+        <span style="font-size: 15pt;">6</span>
+      </div>
+      <div>
+        <strong style="font-size: 15pt; color: crimson;">책상</strong>
+        <span style="font-size: 15pt;">5</span>
+      </div>
     </div>
-    <button class="homebtn" onclick="location.href='/'" >Home</button>
+    <div class="followers half">
+      <h2>Others</h2>
+      {% if user.Followers %}
+        {% for follower in user.Followers %}
+          <div><strong style="font-size: 20pt; color: crimson;">Following - {{follower.nick}}</strong></div>
+        {% endfor %}
+      {% endif %}
+      <div>
+        <strong style="font-size: 15pt; color: crimson;">배터리</strong>
+        <span style="font-size: 15pt;">10</span>
+      </div>
+      <div>
+        <strong style="font-size: 15pt; color: crimson;">테이프</strong>
+        <span style="font-size: 15pt;">10</span>
+      </div>
+      <div>
+        <strong style="font-size: 15pt; color: crimson;">이어폰 2</strong>
+        <span style="font-size: 15pt;">5</span>
+      </div>
+      <div>
+        <strong style="font-size: 15pt; color: crimson;">이어폰 1</strong>
+        <span style="font-size: 15pt;">5</span>
+      </div>
+      <div>
+        <strong style="font-size: 15pt; color: crimson;">에어팟</strong>
+        <span style="font-size: 15pt;">3</span>
+      </div>
+    </div>
+    <button class="homebtn" onclick="location.href='/'" >🏠</button>
   </div>
 {% endblock %}
 

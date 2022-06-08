@@ -7,6 +7,9 @@ const nunjucks = require('nunjucks');
 const dotenv = require('dotenv');
 const passport = require('passport');
 
+// npm i express morgan nunjucks sequelize sequelize-cli mysql2 cookie-parser express-session passport bcrypt multer passport-local ...
+// npm i -D nodemon
+
 dotenv.config();
 const pageRouter = require('./routes/page');
 const authRouter = require('./routes/auth');

@@ -12,19 +12,19 @@
       <div class="profile-wrap">
         <div class="profile">
           {% if user and user.id %}
-            <div class="user-name">{{'안녕하세요! ' + user.nick + '님'}}</div>
+            <div class="user-name">{{user.nick + '\'s Inventory'}}</div>
             <div class="half">
-              <div>팔로잉</div>
-              <div class="count following-count">{{followingCount}}</div>
+              <div>Materials</div>
+              <div class="count following-count">3</div>
             </div>
             <div class="half">
-              <div>팔로워</div>
-              <div class="count follower-count">{{followerCount}}</div>
+              <div>Others</Article></div>
+              <div class="count follower-count">5</div>
             </div>
           <input id="my-id" type="hidden" value="{{user.id}}">
           <input id="my-nick" type="hidden" value="{{user.nick}}">
-          <a id="my-profile" href="/profile" class="btn">내 프로필</a>
-          <a id="logout" href="/auth/logout" class="btn">로그아웃</a>
+          <a id="my-profile" href="/profile" class="btn">Profile</a>
+          <a id="logout" href="/auth/logout" class="btn">Log out</a>
         {% else %}
           <form id="login-form" action="/auth/login" method="post">
             <div class="input-group">
@@ -45,7 +45,7 @@
           Made by&nbsp;
           <a href="https://www.zerocho.com" target="_blank">ZeroCho</a>
         </footer> -->
-      <button class="homebtn" onclick="location.href='/'" >Home</button>
+      <button class="homebtn" onclick="location.href='/'" >🏠</button>
       </div>
       {% block content %}
       {% endblock %}
