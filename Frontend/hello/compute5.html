@@ -23,6 +23,9 @@
         input[type=text] {
             padding: 4px;
         }
+        .big{
+            color: #f00;
+        }
     </style>
 </head>
 
@@ -40,7 +43,7 @@
         <hr />
         <div>
             <label>합계</label>
-            <input type="text" v-model="total" />
+            <input type="text" v-model="total" v-bind:class="{ big:total>=15000}"/>
         </div>
     </div>
     <script type="text/javascript">

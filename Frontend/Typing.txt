@@ -1,3 +1,16 @@
+01>01
+소스 선두에 use strict = 변수 미선언 후 사용시 오류 발생시키기
+
+  >02
+  JS에서 함수가 자료형으로 인식 대입 ㄱㄴ 함수 매개변수로 전달 ㄱㄴ
+  Nan/0/null/undefined === false
+
+   lazy evaluation 이미 | & 결과가 정해졌다면 뒤쪽 연산 대상은 실행 x
+
+02>01
+  v-model 지시자의 값은 앱의 속성명이다.
+  v-show v-if
+
 v-bind : js 객체
 .green {bgcolor-green};
 {green:value} - 동적 서식
@@ -53,7 +66,6 @@ maven -> gradle 추세의 전환
 
 CLI <> GUI
 
-<<<<<<< HEAD
 2022-05-25
 mounted life-cycle method == onCreate()
 webB c++객체 == DOM         slow
@@ -65,5 +77,3 @@ VD - 변환된 페이지간 차이 분석 및 필요한 부분만 추가 구현.
 VD-렌더링 / RD - 업데이트
 
 beforeDestroy > beForeUnmount
-=======
->>>>>>> 7df85b300926472bac66d41a5a3a675cd4d0115e

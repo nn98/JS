@@ -1,0 +1,1 @@
+for(let i=0;i++<30;console.log(Math.round(Math.random()*(20-10+1)+10)));

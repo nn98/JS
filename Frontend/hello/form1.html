@@ -1,0 +1,77 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <script src="https://unpkg.com/vue@next"></script>
+    <style>
+        div#app {
+            margin: 20px auto;
+            padding: 20px;
+            width: 300px;
+            border: 1px solid gray;
+            box-shadow: 5px 5px 5px #aaa;
+        }
+
+        p {
+            font-size: 15pt;
+            color: blue;
+        }
+
+        select {
+            padding: 5px;
+            font-size: 15pt;
+            width: 150px;
+            margin: 10px;
+        }
+
+        label {
+            font-size: 14pt;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <h1>입력 양식</h1>
+        <p>{{ choice }}</p>
+        <hr />
+        <input type="text" v-model="name" placeholder="input name"/>
+        <hr />
+        <div>
+            <label>
+                <input type="radio" value="m" v-model="sex" />남
+            </label>
+            <label>
+                <input type="radio" value="f" v-model="sex" />여
+            </label>
+            </div>
+        <select v-model="choice">
+            <option value="software">소프</option>
+            <option value="computer">컴공</option>
+            <option value="media">미콘</option>
+            <option value="IT">정통</option>
+        </select>
+        <br>
+        <label><input type="checkbox" v-model="run"/>실행</label>
+        <hr />
+        <span>이름: </span> <span>{{run?name:""}}</span><br>
+        <span>성별: </span> <span>{{run?sex:""}}</span><br>
+        <span>학과: </span> <span>{{run?choice:""}}</span><br>
+        <span>실행: </span> <span>{{run?run:""}}</span>
+    </div>
+    <script type="text/javascript">
+        let app = {
+            data() {
+                return {
+                    name: "",
+                    choice: "yellow",
+                    sex: "",
+                    run: ""
+                };
+            }
+        };
+        Vue.createApp(app).mount("#app");
+    </script>
+</body>
+
+</html>
