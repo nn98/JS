@@ -9,7 +9,23 @@
 
 02>01
   v-model 지시자의 값은 앱의 속성명이다.
-  v-show v-if
+  v-show v-if v-bind===: 안쓰면 스트링
+  >02
+  여러 단어로 구성된 변수 이름이나 메소드 이름을 표기하는 방식
+- camel case
+- snake case
+- kebab case
+- Pascal case
+예 camel case snake case kebab case Pascal case
+font size fontSize font_size font-size FontSize
+left margin leftMargin left_maring left-margin LeftMargin
+background color backgroundColor background_color background-color BackgroundColor
+Java 변수명, 속성명, 메소드 이름은 camel case 방식이 관례이다.
+Java 클래스 이름은 Pascal case 방식이 관례이다.
+C 변수 함수 이름은 snake case 방식이 관례이다.
+CSS 서식 이름은 kebab case 이다.
+예: font-size, margin-left, background-color
+
 
 v-bind : js 객체
 .green {bgcolor-green};

@@ -9,6 +9,7 @@
     "session": "^0.1.0"
   },
   "devDependencies": {
+    "@vue/cli-plugin-router": "~5.0.0",
     "eslint": "^8.17.0"
   }
 }
